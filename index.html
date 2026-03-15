@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabinet Médical de Kinésithérapie et de Remise en Forme Méghraoui</title>
+  <meta name="description" content="Cabinet de kinésithérapie et remise en forme Méghraoui – Rééducation, soins spécialisés et programmes personnalisés pour votre santé et bien-être.">
+  <meta name="google-site-verification" content="yfq81EIWEspubQ-YRFA92mi84LnaxVL4AXZAqS6o6-w" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --teal-dark: #2A3F8F;
+      --teal-mid: #4A6CF7;
+      --teal-light: #EEF1FE;
+      --teal-pale: #B8C6FB;
+      --accent: #E8478B;
+      --accent-light: #FDEEF5;
+      --cream: #F8F7FC;
+      --white: #ffffff;
+      --text: #1a1a1a;
+      --muted: #5F5E5A;
+      --gold: #BA7517;
+      --border: #e8e8e8;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); }
+
+    /* ===== NAVIGATION ===== */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 4rem; height: 70px;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .nav-logo-icon {
+      width: 44px; height: 44px;
+      background: var(--teal-mid); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo-icon svg { width: 24px; height: 24px; fill: #fff; }
+    .nav-title { font-family: 'Playfair Display', serif; font-size: 13px; font-weight: 700; color: var(--teal-dark); line-height: 1.3; }
+    .nav-title small { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400; color: var(--muted); display: block; }
+    .nav-links { display: flex; gap: 28px; list-style: none; }
+    .nav-links a { text-decoration: none; font-size: 14px; color: var(--muted); font-weight: 500; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal-mid); }
+    .nav-cta {
+      background: var(--teal-mid); color: #fff;
+      font-size: 13px; font-weight: 500;
+      padding: 10px 20px; border-radius: 7px;
+      text-decoration: none; transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--teal-dark); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #1a2f7a 0%, #4A6CF7 50%, #E8478B 100%);
+      padding: 80px 4rem;
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 3rem; align-items: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18); color: #fff;
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 20px;
+    }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 18px; }
+    .hero p { font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.8; margin-bottom: 32px; max-width: 480px; }
+    .hero-btns { display: flex; gap: 14px; }
+    .btn-white { background: #fff; color: var(--teal-dark); font-size: 14px; font-weight: 600; padding: 13px 26px; border-radius: 7px; text-decoration: none; transition: transform 0.2s; }
+    .btn-white:hover { transform: translateY(-2px); }
+    .btn-outline { border: 2px solid rgba(255,255,255,0.6); color: #fff; font-size: 14px; font-weight: 500; padding: 13px 26px; border-radius: 7px; text-decoration: none; transition: background 0.2s; }
+    .btn-outline:hover { background: rgba(255,255,255,0.15); }
+    .hero-sidebar { min-width: 250px; }
+    .hero-card { background: rgba(255,255,255,0.13); border: 1px solid rgba(255,255,255,0.25); border-radius: 16px; padding: 28px 20px; color: #fff; text-align: center; margin-bottom: 16px; }
+    .hero-card-icon { font-size: 40px; margin-bottom: 10px; }
+    .hero-card h3 { font-size: 15px; font-weight: 500; margin-bottom: 5px; }
+    .hero-card p { font-size: 12px; opacity: 0.75; }
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); background: rgba(255,255,255,0.12); border-radius: 12px; padding: 14px 0; }
+    .stat-item { text-align: center; padding: 0 8px; border-right: 1px solid rgba(255,255,255,0.2); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-size: 22px; font-weight: 700; color: #fff; }
+    .stat-lbl { font-size: 11px; color: rgba(255,255,255,0.7); }
+
+    /* ===== SECTIONS ===== */
+    section { padding: 64px 4rem; }
+    section.alt { background: var(--cream); }
+    .section-header { margin-bottom: 40px; }
+    .section-eyebrow { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--teal-mid); font-weight: 500; margin-bottom: 8px; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 32px; font-weight: 700; color: var(--teal-dark); margin-bottom: 10px; }
+    .section-sub { font-size: 16px; color: var(--muted); max-width: 560px; line-height: 1.7; }
+
+    /* ===== SERVICES ===== */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .service-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; transition: box-shadow 0.25s, border-color 0.25s; }
+    .service-card:hover { box-shadow: 0 6px 24px rgba(15,110,86,0.12); border-color: var(--teal-pale); }
+    .svc-icon { width: 48px; height: 48px; background: var(--teal-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .svc-icon svg { width: 24px; height: 24px; stroke: var(--teal-dark); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .service-card h4 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; }
+    .service-card p { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+    /* ===== ÉQUIPE ===== */
+    .team-grid { display: grid; grid-template-columns: 1fr; gap: 24px; max-width: 400px; margin: 0 auto; }
+    .team-card { text-align: center; background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 32px 20px; transition: box-shadow 0.25s; }
+    .team-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.08); }
+    .avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--teal-light); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--teal-dark); border: 3px solid var(--teal-pale); }
+    .team-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+    .team-card .role { font-size: 13px; color: var(--teal-mid); font-weight: 500; margin-bottom: 4px; }
+    .team-card .spec { font-size: 12px; color: var(--muted); }
+
+    /* ===== TARIFS ===== */
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .price-card { border: 1.5px solid var(--border); border-radius: 14px; padding: 28px 24px; background: #fff; position: relative; }
+    .price-card.featured { border: 2px solid var(--teal-mid); background: var(--teal-light); }
+    .price-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--teal-mid); color: #fff; font-size: 11px; font-weight: 600; padding: 4px 14px; border-radius: 20px; white-space: nowrap; }
+    .price-tag { font-size: 34px; font-weight: 700; color: var(--teal-dark); margin-bottom: 4px; }
+    .price-tag span { font-size: 14px; font-weight: 400; color: var(--muted); }
+    .price-title { font-size: 16px; font-weight: 600; margin: 8px 0 16px; }
+    .price-features { list-style: none; font-size: 13px; color: var(--muted); }
+    .price-features li { padding: 7px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .price-features li::before { content: "✓ "; color: var(--teal-mid); font-weight: 700; }
+    .price-btn { display: block; margin-top: 20px; text-align: center; background: var(--teal-mid); color: #fff; font-size: 13px; font-weight: 600; padding: 11px 20px; border-radius: 7px; text-decoration: none; transition: background 0.2s; }
+    .price-btn:hover { background: var(--teal-dark); }
+
+    /* ===== TÉMOIGNAGES ===== */
+    .testi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .testi-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 24px 20px; }
+    .stars { color: var(--gold); font-size: 14px; margin-bottom: 12px; }
+    .testi-card p { font-size: 14px; color: var(--muted); line-height: 1.8; font-style: italic; margin-bottom: 14px; }
+    .testi-author { font-size: 13px; font-weight: 600; color: var(--text); }
+
+    /* ===== RENDEZ-VOUS ===== */
+    .rdv-section { background: linear-gradient(135deg, #1a2f7a 0%, #4A6CF7 60%, #E8478B 100%); padding: 72px 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+    .rdv-text h2 { font-family: 'Playfair Display', serif; font-size: 36px; color: #fff; margin-bottom: 14px; }
+    .rdv-text p { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.8; margin-bottom: 28px; }
+    .rdv-info { display: flex; flex-direction: column; gap: 10px; }
+    .rdv-info-item { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.85); font-size: 14px; }
+    .rdv-form { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 32px; }
+    .rdv-form h3 { color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    .form-group { margin-bottom: 12px; }
+    .form-label { display: block; font-size: 12px; color: rgba(255,255,255,0.7); margin-bottom: 5px; font-weight: 500; }
+    .form-input {
+      width: 100%; background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25); color: #fff;
+      font-size: 13px; padding: 10px 14px; border-radius: 7px;
+      font-family: 'DM Sans', sans-serif;
+      transition: border-color 0.2s;
+    }
+    .form-input::placeholder { color: rgba(255,255,255,0.5); }
+    .form-input:focus { outline: none; border-color: rgba(255,255,255,0.6); }
+    .form-select {
+      width: 100%; background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.85);
+      font-size: 13px; padding: 10px 14px; border-radius: 7px;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .form-select option { background: var(--teal-dark); color: #fff; }
+    .btn-submit {
+      width: 100%; background: #fff; color: var(--teal-dark);
+      font-size: 14px; font-weight: 700; padding: 14px;
+      border-radius: 7px; border: none; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; margin-top: 8px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+
+    /* ===== FAQ ===== */
+    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 720px; }
+    .faq-item { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .faq-q { padding: 16px 20px; font-size: 15px; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
+    .faq-q:hover { background: var(--teal-light); }
+    .faq-a { padding: 0 20px 16px; font-size: 13px; color: var(--muted); line-height: 1.8; display: none; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-arrow { transition: transform 0.2s; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+
+    /* ===== CONTACT ===== */
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+    .contact-icon { width: 44px; height: 44px; min-width: 44px; background: var(--teal-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+    .contact-icon svg { width: 20px; height: 20px; stroke: var(--teal-dark); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .contact-item h4 { font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+    .contact-item p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .map-placeholder { margin-top: 32px; background: var(--teal-light); border-radius: 12px; height: 220px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--teal-pale); }
+    .map-placeholder p { color: var(--teal-dark); font-size: 14px; font-weight: 500; }
+
+    /* ===== FOOTER ===== */
+    footer { background: #111827; color: rgba(255,255,255,0.6); padding: 40px 4rem; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; margin-bottom: 32px; }
+    .footer-brand h3 { font-family: 'Playfair Display', serif; font-size: 16px; color: #fff; margin-bottom: 10px; }
+    .footer-brand p { font-size: 13px; line-height: 1.7; }
+    .footer-col h4 { font-size: 13px; font-weight: 600; color: #fff; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { font-size: 13px; margin-bottom: 8px; }
+    .footer-col ul li a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--teal-pale); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; display: flex; justify-content: space-between; font-size: 12px; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .hero { padding: 48px 1.5rem; grid-template-columns: 1fr; }
+      .hero-sidebar { display: none; }
+      .hero h1 { font-size: 32px; }
+      section { padding: 48px 1.5rem; }
+      .services-grid, .team-grid, .pricing-grid, .contact-grid { grid-template-columns: 1fr; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .rdv-section { grid-template-columns: 1fr; padding: 48px 1.5rem; gap: 2rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#accueil" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8 2 4 6 4 10c0 6 8 12 8 12s8-6 8-12c0-4-4-8-8-8zm0 10a3 3 0 110-6 3 3 0 010 6z"/></svg>
+    </div>
+    <div class="nav-title">
+      Cabinet Médical Méghraoui
+      <small>Kinésithérapie &amp; Remise en Forme</small>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#equipe">Équipe</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#rendez-vous" class="nav-cta">Prendre RDV</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="accueil">
+  <div class="hero-text">
+    <div class="hero-badge">Cabinet de Kinésithérapie — Méghraoui</div>
+    <h1>Votre corps<br>mérite les<br>meilleurs soins</h1>
+    <p>Méghraoui Nour El Houda, kinésithérapeute diplômée, vous accueille pour une prise en charge personnalisée : rééducation périnéale, traitement des douleurs, kinésithérapie sportive, acupuncture et bien plus encore.</p>
+    <div class="hero-btns">
+      <a href="#rendez-vous" class="btn-white">Prendre rendez-vous</a>
+      <a href="#services" class="btn-outline">Découvrir nos soins</a>
+    </div>
+  </div>
+  <div class="hero-sidebar">
+    <div class="hero-card">
+      <div class="hero-card-icon">🏥</div>
+      <h3>Cabinet agréé</h3>
+      <p>Conventionné Sécurité Sociale</p>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">500+</div>
+        <div class="stat-lbl">Patients</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">15+</div>
+        <div class="stat-lbl">Années</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">98%</div>
+        <div class="stat-lbl">Satisfaits</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-header">
+    <div class="section-eyebrow">Ce que nous faisons</div>
+    <div class="section-title">Nos Spécialités</div>
+    <p class="section-sub">Une prise en charge complète et personnalisée pour chaque patient, de la rééducation à la remise en forme.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 22c0-4.4-3.6-8-8-8M12 22c0-4.4 3.6-8 8-8M12 22V12m0-10C9.2 2 7 4.2 7 7s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5z"/></svg>
+      </div>
+      <h4>Rééducation périnéale</h4>
+      <p>Prise en charge des troubles du plancher pelvien : incontinence urinaire, prolapsus, rééducation post-accouchement et post-opératoire.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></svg>
+      </div>
+      <h4>Rééducation après blessure</h4>
+      <p>Plans de récupération sur mesure après entorses, fractures, opérations ou traumatismes pour retrouver une fonction optimale.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+      </div>
+      <h4>Traitement des douleurs</h4>
+      <p>Soulagement des douleurs chroniques du dos, du cou et des articulations grâce à des techniques manuelles et thérapeutiques ciblées.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <h4>Kinésithérapie sportive</h4>
+      <p>Amélioration de la mobilité, prévention des blessures, retour au sport progressif et optimisation des performances physiques.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+      </div>
+      <h4>Évaluation &amp; exercices guidés</h4>
+      <p>Bilan personnalisé complet suivi d'un programme d'exercices thérapeutiques adaptés à votre condition et vos objectifs.</p>
+    </div>
+    <div class="service-card">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+      </div>
+      <h4>Acupuncture thérapeutique</h4>
+      <p>Acupuncture médicale et thérapie par ventouses pour soulager la douleur, réduire l'inflammation et favoriser la récupération naturelle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ÉQUIPE -->
+<section id="equipe" class="alt">
+  <div class="section-header">
+    <div class="section-eyebrow">Votre thérapeute</div>
+    <div class="section-title">Méghraoui Nour El Houda</div>
+    <p class="section-sub">Une professionnelle diplômée et passionnée, dédiée à votre rétablissement et votre bien-être.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card" style="padding: 40px 32px;">
+      <div class="avatar" style="width:96px;height:96px;font-size:28px;">MN</div>
+      <h4 style="font-size:18px;">Méghraoui Nour El Houda</h4>
+      <div class="role" style="font-size:15px;">Kinésithérapeute principale &amp; Fondatrice</div>
+      <div class="spec" style="margin-top:12px;line-height:1.8;">Spécialisée en rééducation périnéale, kinésithérapie sportive, acupuncture thérapeutique et thérapie par ventouses. Diplômée d'État, elle accompagne ses patients avec une approche globale et bienveillante.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section id="tarifs">
+  <div class="section-header">
+    <div class="section-eyebrow">Nos tarifs</div>
+    <div class="section-title">Transparence &amp; accessibilité</div>
+    <p class="section-sub">Tous nos soins sont conventionnés. Nous acceptons les mutuelles et tiers payant.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-tag">1 500 DA <span>/ séance</span></div>
+      <div class="price-title">Consultation standard</div>
+      <ul class="price-features">
+        <li>Bilan initial inclus</li>
+        <li>Séance de 45 minutes</li>
+        <li>Exercices à domicile fournis</li>
+        <li>Suivi de l'évolution</li>
+        <li>Douleurs dos, cou &amp; articulations</li>
+      </ul>
+      <a href="#rendez-vous" class="price-btn">Réserver</a>
+    </div>
+    <div class="price-card featured">
+      <div class="price-badge">Le plus demandé</div>
+      <div class="price-tag">2 500 DA <span>/ séance</span></div>
+      <div class="price-title">Kinésithérapie spécialisée</div>
+      <ul class="price-features">
+        <li>Rééducation périnéale</li>
+        <li>Kinésithérapie sportive</li>
+        <li>Séance de 60 minutes</li>
+        <li>Programme personnalisé</li>
+        <li>Bilan mensuel inclus</li>
+      </ul>
+      <a href="#rendez-vous" class="price-btn">Réserver</a>
+    </div>
+    <div class="price-card">
+      <div class="price-tag">3 000 DA <span>/ séance</span></div>
+      <div class="price-title">Acupuncture &amp; Ventouses</div>
+      <ul class="price-features">
+        <li>Acupuncture thérapeutique</li>
+        <li>Thérapie par ventouses</li>
+        <li>Séance de 60 minutes</li>
+        <li>Gestion de la douleur</li>
+        <li>Récupération naturelle</li>
+      </ul>
+      <a href="#rendez-vous" class="price-btn">Réserver</a>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section id="temoignages" class="alt">
+  <div class="section-header">
+    <div class="section-eyebrow">Avis patients</div>
+    <div class="section-title">Ce que disent nos patients</div>
+    <p class="section-sub">La confiance de nos patients est notre plus grande récompense.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Suite à mon opération du genou, j'ai été suivi par l'équipe Méghraoui pendant 3 mois. Le résultat est remarquable, je remarche normalement et sans douleur !"</p>
+      <div class="testi-author">— Karim B., 45 ans · Rééducation orthopédique</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Accueil chaleureux, personnel très professionnel. Mes douleurs au dos ont complètement disparu après 10 séances. Je recommande vivement ce cabinet."</p>
+      <div class="testi-author">— Fatima L., 38 ans · Rééducation rachis</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★☆</div>
+      <p>"Excellent suivi pour ma rééducation post-fracture. Les exercices fournis à domicile ont vraiment accéléré ma guérison. Très disponibles et à l'écoute."</p>
+      <div class="testi-author">— Mohamed R., 52 ans · Rééducation orthopédique</div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <p>"Le programme remise en forme est excellent ! J'ai perdu 8 kg en 2 mois avec un suivi personnalisé et des séances vraiment adaptées à mes objectifs."</p>
+      <div class="testi-author">— Amina S., 29 ans · Remise en forme</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-header">
+    <div class="section-eyebrow">Questions fréquentes</div>
+    <div class="section-title">Vous avez des questions ?</div>
+    <p class="section-sub">Retrouvez les réponses aux questions les plus fréquentes de nos patients.</p>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Ai-je besoin d'une ordonnance pour consulter ? <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">En Algérie, une ordonnance médicale est recommandée pour une prise en charge par la CNAS ou votre mutuelle. Cependant, vous pouvez consulter sans ordonnance en payant directement, notamment pour les séances de remise en forme, d'acupuncture ou de thérapie par ventouses.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Combien de séances sont nécessaires ? <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">Cela dépend de votre état de santé et de votre progression. En général, une rééducation simple nécessite entre 6 et 12 séances, tandis qu'une prise en charge plus complexe (post-opératoire, rééducation périnéale, neurologique) peut aller de 15 à 30 séances. Mme Méghraoui établit un programme clair dès la première consultation.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Acceptez-vous le tiers payant ? <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">Oui, nous acceptons le tiers payant pour les assurés sociaux (CNAS/CASNOS) disposant d'une ordonnance valide. Les mutuelles complémentaires sont également acceptées. Pour toute question sur la prise en charge, n'hésitez pas à nous contacter au +213 550 145 675 avant votre rendez-vous.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Comment se déroule la première séance ? <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">La première séance dure environ 45 à 60 minutes. Elle commence par un entretien approfondi sur vos antécédents médicaux et vos douleurs, suivi d'un examen physique complet (posture, mobilité, force musculaire). À l'issue de ce bilan, Mme Méghraoui vous explique son diagnostic et vous propose un plan de traitement personnalisé avec les objectifs à atteindre.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        Proposez-vous des séances à domicile ? <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">Oui, des séances à domicile sont possibles pour les patients à mobilité réduite, les personnes âgées ou celles qui ne peuvent pas se déplacer après une opération. Le service est disponible sur Hadjout et les environs de Tipaza. Contactez-nous au +213 550 145 675 pour vérifier la disponibilité et convenir des modalités.</div>
+    </div>
+  </div>
+</section>
+
+<!-- RENDEZ-VOUS -->
+<div class="rdv-section" id="rendez-vous">
+  <div class="rdv-text">
+    <h2>Prendre rendez-vous</h2>
+    <p>Consultez nos disponibilités et réservez votre séance facilement. Notre secrétariat vous confirme votre rendez-vous sous 24h.</p>
+    <div class="rdv-info">
+      <div class="rdv-info-item">📞 &nbsp;+213 550 145 675</div>
+      <div class="rdv-info-item">📧 &nbsp;houdameghraoui19&#64;gmail&#46;com</div>
+      <div class="rdv-info-item">⏰ &nbsp;Sam – Jeu : 7h00 – 16h00</div>
+      <div class="rdv-info-item">📅 &nbsp;Vendredi : Fermé</div>
+      <div class="rdv-info-item">📍 &nbsp;Rue des Frères Taïls, Hadjout, Tipaza</div>
+    </div>
+  </div>
+  <div class="rdv-form">
+    <h3>Formulaire de réservation</h3>
+    <div id="form-success" style="display:none; background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.4); border-radius:10px; padding:20px; text-align:center; color:#fff;">
+      <div style="font-size:36px; margin-bottom:10px;">✅</div>
+      <div style="font-size:16px; font-weight:600; margin-bottom:6px;">Demande envoyée avec succès !</div>
+      <div style="font-size:13px; opacity:0.85;">Mme Méghraoui vous contactera sous 24h pour confirmer votre rendez-vous.</div>
+    </div>
+    <form id="rdv-form" onsubmit="submitForm(event)">
+      <div class="form-row">
+        <div>
+          <label class="form-label">Prénom *</label>
+          <input type="text" name="prenom" class="form-input" placeholder="Votre prénom" required>
+        </div>
+        <div>
+          <label class="form-label">Nom *</label>
+          <input type="text" name="nom" class="form-input" placeholder="Votre nom" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div>
+          <label class="form-label">Téléphone *</label>
+          <input type="tel" name="telephone" class="form-input" placeholder="+213..." required>
+        </div>
+        <div>
+          <label class="form-label">Email</label>
+          <input type="email" name="email" class="form-input" placeholder="votre@email.com">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Service souhaité *</label>
+        <select name="service" class="form-select" required>
+          <option value="">Choisir un service...</option>
+          <option>Rééducation périnéale</option>
+          <option>Rééducation après blessure</option>
+          <option>Traitement des douleurs (dos, cou, articulations)</option>
+          <option>Kinésithérapie sportive</option>
+          <option>Évaluation &amp; exercices guidés</option>
+          <option>Acupuncture thérapeutique</option>
+          <option>Thérapie par ventouses</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Date souhaitée *</label>
+        <input type="date" name="date" class="form-input" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Message (optionnel)</label>
+        <textarea name="message" class="form-input" rows="2" placeholder="Précisez votre demande si nécessaire..." style="resize:vertical; font-family:'DM Sans',sans-serif;"></textarea>
+      </div>
+      <button type="submit" class="btn-submit" id="submit-btn">
+        Confirmer le rendez-vous
+      </button>
+    </form>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const allItems = document.querySelectorAll('.faq-item');
+  allItems.forEach(i => { if (i !== item) i.classList.remove('open'); });
+  item.classList.toggle('open');
+}
+
+async function submitForm(e) {
+  e.preventDefault();
+  const form = document.getElementById('rdv-form');
+  const btn = document.getElementById('submit-btn');
+  const data = new FormData(form);
+
+  btn.textContent = 'Envoi en cours...';
+  btn.disabled = true;
+
+  try {
+    const res = await fetch('https://formspree.io/f/xpqylvjp', {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (res.ok) {
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    } else {
+      btn.textContent = 'Erreur — réessayez';
+      btn.disabled = false;
+    }
+  } catch(err) {
+    btn.textContent = 'Erreur réseau — réessayez';
+    btn.disabled = false;
+  }
+}
+</script>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-header">
+    <div class="section-eyebrow">Nous trouver</div>
+    <div class="section-title">Contactez-nous</div>
+    <p class="section-sub">Notre équipe est disponible pour répondre à toutes vos questions.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </div>
+      <div>
+        <h4>Adresse</h4>
+        <p>Rue des Frères Taïls<br>Hadjout, Tipaza<br>Algérie</p>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .91h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      </div>
+      <div>
+        <h4>Téléphone &amp; Email</h4>
+        <p>+213 550 145 675<br><a href="/cdn-cgi/l/email-protection#e68e899382878b83818e948789938fd7dfa6818b878f8ac885898b" style="color:var(--teal-mid);">houdameghraoui19&#64;gmail&#46;com</a><br>WhatsApp disponible</p>
+      </div>
+    </div>
+    <div class="contact-item">
+      <div class="contact-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      </div>
+      <div>
+        <h4>Horaires d'ouverture</h4>
+        <p>Samedi – Jeudi : 7h – 16h<br>Vendredi : Fermé</p>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top: 32px; border-radius: 12px; overflow: hidden; border: 1px solid var(--teal-pale);">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3192.0!2d2.41083!3d36.5087983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x128581301cd64465:0x5aa4ef9d4ac9746c!2sCabinet+de+reeducation+(Meghraoui)!5e0!3m2!1sfr!2sdz!4v1700000000000"
+      width="100%" height="280" style="border:0; display:block;" allowfullscreen="" loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+  <div style="margin-top: 12px; text-align: center;">
+    <a href="https://maps.app.goo.gl/BD7oroz6B7yGman67" target="_blank"
+       style="display:inline-block; background: var(--teal-mid); color:#fff; font-size:13px; font-weight:600; padding: 10px 22px; border-radius:7px; text-decoration:none;">
+      📍 Ouvrir dans Google Maps
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>Cabinet Médical de Kinésithérapie<br>et de Remise en Forme Méghraoui</h3>
+      <p>Votre santé, notre priorité. Une équipe de professionnels qualifiés à votre service depuis plus de 15 ans.</p>
+    </div>
+    <div class="footer-col
